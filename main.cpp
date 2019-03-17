@@ -33,10 +33,19 @@ double CleaningCost(int area);
   
 int main(int argc, char** argv) {
     int roomArea;
+    char endProgram;
+    bool quit = false;
     
-    roomArea = GetArea();
-    cout << "Your total carpet cleaning cost for a " << roomArea << 
+    while (quit != true) {
+        roomArea = GetArea();
+        cout << "Your total carpet cleaning cost for a " << roomArea << 
             " sized room is $" <<fixed << setprecision(2) << CleaningCost(roomArea) << endl;
+        cout << "Enter q to quit. Press any other key to run again" << endl;
+        cin >> endProgram;
+        if (endProgram == 'q') {
+            quit = true;
+        }
+    }
     
     return 0;
 }
@@ -58,6 +67,6 @@ double CleaningCost(int area) {
     if (area > flatCostArea) {
         return 99.0 + (0.25 * (area - flatCostArea));
     } else {
-        return flatCostArea;
+        return 99.0;
     }
 }
