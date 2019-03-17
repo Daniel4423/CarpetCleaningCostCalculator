@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     while (quit != true) {
         roomArea = GetArea();
         cout << "Your total carpet cleaning cost for a " << roomArea << 
-            " sized room is $" <<fixed << setprecision(2) << CleaningCost(roomArea) << endl;
+            " sq ft room is $" <<fixed << setprecision(2) << CleaningCost(roomArea) << endl;
         cout << "Enter q to quit. Press any other key to run again" << endl;
         cin >> endProgram;
         if (endProgram == 'q') {
